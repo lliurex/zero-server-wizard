@@ -1,0 +1,15 @@
+Name=zero-server-wizard
+Name[en]=Zero Server Wizard
+Name[es]=Zero Server Wizard
+Name[ca_ES@valencia]=Zero Server Wizard
+Comment=Configures Centre Server
+Comment[es]=Configura el servidor LliureX
+Comment[qcv]=Configura el servidor LliureX
+Comment[ca_ES@valencia]=Configura el servidor LliureX
+Icon=littlewizard
+Groups=admins;adm
+Category=System
+ScriptPath=zero-server-wizard.zmd
+Using=pe 
+Service=True
+Modal=True

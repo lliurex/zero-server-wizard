@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-06 12:45+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /tmp/main.ui:18
+msgid ""
+"Basic classroom server configuration.\n"
+"netadmin user will be created in ldap as an admin and will be accessible "
+"anywhere in the classroom network.\n"
+"\n"
+"A restart after the initialization is needed."
+msgstr ""
+
+#: /tmp/main.ui:24
+msgid ""
+"Master server configuration. \n"
+"This server will centrify LDAP operations. Slave servers will replicate LDAP "
+"from a single master server in the local network.\n"
+"\n"
+"A restart after the initialization is needed."
+msgstr ""
+
+#: /tmp/main.ui:30
+msgid ""
+"Slave Server configuration.\n"
+"A  Master server is needed in the network. Each Slave master must have an "
+"unique classroom ID.\n"
+"\n"
+"A restart after the initialization is needed."
+msgstr ""
+
+#: /tmp/main.ui:37
+msgid "Zero-Server-Wizard"
+msgstr ""
+
+#: /tmp/main.ui:105 /tmp/main.ui:977
+msgid "<b>'netadmin' Password</b>"
+msgstr ""
+
+#: /tmp/main.ui:174 /tmp/main.ui:1046 /tmp/main.ui:2152
+msgid "<b>Server Name</b>"
+msgstr ""
+
+#: /tmp/main.ui:200 /tmp/main.ui:1072 /tmp/main.ui:2178
+msgid "<b>Server Domain Name</b>"
+msgstr ""
+
+#: /tmp/main.ui:318
+msgid "<b>Independent Server</b>"
+msgstr ""
+
+#: /tmp/main.ui:387 /tmp/main.ui:1384 /tmp/main.ui:2528
+msgid "<b>Internal interface</b>"
+msgstr ""
+
+#: /tmp/main.ui:434 /tmp/main.ui:1431 /tmp/main.ui:2575
+msgid "<b>External interface</b>"
+msgstr ""
+
+#: /tmp/main.ui:490 /tmp/main.ui:1487 /tmp/main.ui:2631
+msgid "<b>Internal IP</b>"
+msgstr ""
+
+#: /tmp/main.ui:516 /tmp/main.ui:1513 /tmp/main.ui:2657
+msgid "<b>External configuration mode</b>"
+msgstr ""
+
+#: /tmp/main.ui:532 /tmp/main.ui:1529 /tmp/main.ui:2673
+msgid "DHCP"
+msgstr ""
+
+#: /tmp/main.ui:549 /tmp/main.ui:1546 /tmp/main.ui:2690
+msgid "Manual"
+msgstr ""
+
+#: /tmp/main.ui:588 /tmp/main.ui:1585 /tmp/main.ui:2729
+msgid "<b>Internal mask</b>"
+msgstr ""
+
+#: /tmp/main.ui:646 /tmp/main.ui:1643 /tmp/main.ui:2819
+msgid "<b>External IP</b>"
+msgstr ""
+
+#: /tmp/main.ui:684 /tmp/main.ui:1681 /tmp/main.ui:2857
+msgid "<b>External mask</b>"
+msgstr ""
+
+#: /tmp/main.ui:722 /tmp/main.ui:1719 /tmp/main.ui:2895
+msgid "<b>External gateway</b>"
+msgstr ""
+
+#: /tmp/main.ui:757 /tmp/main.ui:1754 /tmp/main.ui:2930
+msgid "<b>Manual Options</b>"
+msgstr ""
+
+#: /tmp/main.ui:782 /tmp/main.ui:1859 /tmp/main.ui:3035
+msgid "<b>DNS</b>"
+msgstr ""
+
+#: /tmp/main.ui:894 /tmp/main.ui:1971 /tmp/main.ui:3147
+msgid "<b>Server Network</b>"
+msgstr ""
+
+#: /tmp/main.ui:918
+msgid "Independent"
+msgstr ""
+
+#: /tmp/main.ui:1114 /tmp/main.ui:2252
+msgid "<b>NFS options</b>"
+msgstr ""
+
+#: /tmp/main.ui:1152
+msgid "Export /net"
+msgstr ""
+
+#: /tmp/main.ui:1169 /tmp/main.ui:2293
+msgid "Mount /net from external IP"
+msgstr ""
+
+#: /tmp/main.ui:1195 /tmp/main.ui:2334
+msgid "Disabled"
+msgstr ""
+
+#: /tmp/main.ui:1315
+msgid "<b>Master Server</b>"
+msgstr ""
+
+#: /tmp/main.ui:1786 /tmp/main.ui:2962
+msgid "<b>Replication interface</b>"
+msgstr ""
+
+#: /tmp/main.ui:1998
+msgid "Master"
+msgstr ""
+
+#: /tmp/main.ui:2058
+msgid "<b>Remote Master Server user and password(twice)</b>"
+msgstr ""
+
+#: /tmp/main.ui:2204
+msgid "<b>Classroom ID</b>"
+msgstr ""
+
+#: /tmp/main.ui:2318
+msgid "Mount /net from Master"
+msgstr ""
+
+#: /tmp/main.ui:2459
+msgid "<b>Slave Server</b>"
+msgstr ""
+
+#: /tmp/main.ui:2759
+msgid "Unlock internal IP edition"
+msgstr ""
+
+#: /tmp/main.ui:3174
+msgid "Slave"
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:130
+#: ../install-files/usr/share/zero-server-wizard/slave.py:159
+#: ../install-files/usr/share/zero-server-wizard/independent.py:106
+msgid "Passwords do not match"
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:162
+#: ../install-files/usr/share/zero-server-wizard/slave.py:196
+msgid "External interface alias (Recommended)"
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:261
+#: ../install-files/usr/share/zero-server-wizard/slave.py:309
+#: ../install-files/usr/share/zero-server-wizard/independent.py:218
+msgid "Internal IP must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:264
+#: ../install-files/usr/share/zero-server-wizard/slave.py:312
+#: ../install-files/usr/share/zero-server-wizard/independent.py:221
+msgid "Internal mask must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:267
+#: ../install-files/usr/share/zero-server-wizard/slave.py:315
+#: ../install-files/usr/share/zero-server-wizard/independent.py:224
+msgid "Server name cannot be an empty string."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:269
+#: ../install-files/usr/share/zero-server-wizard/slave.py:317
+#: ../install-files/usr/share/zero-server-wizard/independent.py:226
+msgid "Server domain name cannot be an empty string."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:275
+#: ../install-files/usr/share/zero-server-wizard/slave.py:323
+#: ../install-files/usr/share/zero-server-wizard/independent.py:232
+msgid "External IP must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:277
+#: ../install-files/usr/share/zero-server-wizard/independent.py:234
+msgid "External mask must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:279
+#: ../install-files/usr/share/zero-server-wizard/slave.py:327
+#: ../install-files/usr/share/zero-server-wizard/independent.py:236
+msgid "External gateway must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:283
+#: ../install-files/usr/share/zero-server-wizard/slave.py:331
+#: ../install-files/usr/share/zero-server-wizard/independent.py:240
+msgid "DNS1 must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:285
+#: ../install-files/usr/share/zero-server-wizard/slave.py:333
+#: ../install-files/usr/share/zero-server-wizard/independent.py:242
+msgid "DNS2 must be a valid IP."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:289
+#: ../install-files/usr/share/zero-server-wizard/slave.py:337
+msgid "NFS mount point doesn't seem to be valid."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/master.py:412
+#: ../install-files/usr/share/zero-server-wizard/slave.py:458
+#: ../install-files/usr/share/zero-server-wizard/independent.py:355
+msgid "Initialization complete. A reboot is required."
+msgstr ""
+
+#: ../install-files/usr/share/zero-server-wizard/slave.py:306
+msgid "Remote passwords do not match."
+msgstr ""

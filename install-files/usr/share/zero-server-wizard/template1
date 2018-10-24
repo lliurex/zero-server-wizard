@@ -1,0 +1,16 @@
+[INDEPENDENT]
+user=lliurex
+password=lliurex
+adminpassword=lliurex
+srv_name=server
+srv_domain_name=aula1
+dns1=172.25.111.5
+dns2=172.25.111.6
+srv_ip=10.2.1.254
+external_iface=eth1
+internal_iface=eth0
+internal_mask=255.255.255.0
+external_mask=None
+external_ip=None
+external_gateway=None
+external_mode=dhcp

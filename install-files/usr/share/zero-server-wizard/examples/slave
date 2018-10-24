@@ -1,0 +1,20 @@
+[SLAVE]
+#remote_ip=10.0.0.135
+#ldap netadmin password
+adminpassword=lliurex
+srv_name=aula1
+number_classroom=1
+srv_domain_name=lliurex
+dns1=172.27.111.5
+dns2=172.27.111.6
+srv_ip=10.2.1.254
+external_iface=eth1
+internal_iface=eth0
+internal_mask=255.255.255.0
+external_mask=None
+external_ip=None
+external_gateway=None
+external_mode=dhcp
+#external_mode=manual
+#enable_data_replication=True
+enable_data_replication=False

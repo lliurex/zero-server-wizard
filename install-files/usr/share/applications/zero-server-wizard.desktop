@@ -1,0 +1,21 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=zero-server-wizard
+Name[en]=Zero Server Wizard
+Name[es]=Zero Server Wizard
+Name[ca_ES@valencia]=Zero Server Wizard
+Name[ca_ES.UTF-8@valencia]=Zero Server Wizard
+Name[ca]=Zero Server Wizard
+Comment=Configures Centre Server
+Comment[es]=Configura el servidor LliureX
+Comment[ca]=Configura el servidor LliureX
+Comment[ca_ES@valencia]=Configura el servidor LliureX
+Comment[ca_ES.UTF-8@valencia]=Configura el servidor LliureX
+Exec= pe zero-server-wizard.zmd
+Terminal=false
+Icon=zero-server-wizard
+Type=Application
+GenericName=zero-server-wizard
+NoDisplay=true
+Categories=LliureX-Administration;

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+
+	echo "USAGE:"
+	echo -e "\tzero-server-wizard-cli TEMPLATE_FILE"
+else
+	python /usr/share/zero-server-wizard/core.py -m cli -t $1
+fi
