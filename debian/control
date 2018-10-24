@@ -1,0 +1,14 @@
+Source: zero-server-wizard
+Section: admin
+Priority: extra
+Maintainer: LliureX Team <lliurex@gva.es>
+Build-Depends: debhelper (>= 10), zero-dev, librsvg2-bin, python3-pkexec-debhelper, python3-poinstaller
+Standards-Version: 4.1.2
+Homepage: http://www.lliurex.net
+
+Package: zero-server-wizard
+Architecture: all
+Pre-Depends: zero-center (>=14.06.1)
+Depends: ${shlibs:Depends}, ${misc:Depends}, python, policykit-1, gir1.2-gtk-3.0
+Description: Lliurex server wizard
+ Assistant to initialize lliurex servers
