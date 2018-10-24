@@ -6,6 +6,7 @@ LINK_COLOR    = \x1b[31;01m
 
 all: build
 	@echo -e '$(LINK_COLOR)* Copying SVGS [$@]$(NO_COLOR)'
+	mkdir -p install-files/usr/share/banners/lliurex-neu/
 	cp svg/*.png install-files/usr/share/banners/lliurex-neu/
 
 build:
