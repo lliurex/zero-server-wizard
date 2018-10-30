@@ -69,9 +69,9 @@ if ret[0]:
 	
 		# DISABLING PROXY BY DEFAULT
 		if c.get_variable("","VariablesManager","CLIENT_PROXY_ENABLED")==None:
-			print c.add_variable(user,'VariablesManager','CLIENT_PROXY_ENABLED',True,"","Variable to enable or disable proxy in classroom clientes",[])
+			print c.add_variable(user,'VariablesManager','CLIENT_PROXY_ENABLED',False,"","Variable to enable or disable proxy in classroom clientes",[])
 		else:
-			print c.set_variable(user,"VariablesManager","CLIENT_PROXY_ENABLED",True)
+			print c.set_variable(user,"VariablesManager","CLIENT_PROXY_ENABLED",False)
 		
 		print c.set_nat(user,'NetworkManager', True, True, external_iface)
 		print c.set_routing(user,'NetworkManager', True, True)
