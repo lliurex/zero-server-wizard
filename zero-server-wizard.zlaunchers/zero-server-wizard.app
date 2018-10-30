@@ -10,6 +10,6 @@ Icon=littlewizard
 Groups=admins;adm
 Category=System
 ScriptPath=zero-server-wizard.zmd
-Using=pe 
+Using=pkexec
 Service=True
 Modal=True
