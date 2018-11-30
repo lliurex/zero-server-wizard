@@ -1,3 +1,9 @@
+zero-server-wizard (0.17.2) bionic; urgency=medium
+
+  * Include void folders
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Fri, 30 Nov 2018 13:38:22 +0100
+
 zero-server-wizard (0.17.1) bionic; urgency=medium
 
   * Replace pe by pkexec
