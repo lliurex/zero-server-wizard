@@ -1,3 +1,9 @@
+zero-server-wizard (0.18) bionic; urgency=medium
+
+  * Wait interfaces configuration
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Mon, 03 Dec 2018 12:53:56 +0100
+
 zero-server-wizard (0.17.2) bionic; urgency=medium
 
   * Include void folders
