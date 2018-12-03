@@ -78,6 +78,7 @@ if ret[0]:
 		
 		print c.systemd_resolved_conf(user,"NetworkManager")
 		print c.apply_changes(user,"NetworkManager")
+		print c.check_devices(user,"NetworkManager",[internal_iface,external_iface],60)
 		
 	except Exception as e:
 		print(e)
