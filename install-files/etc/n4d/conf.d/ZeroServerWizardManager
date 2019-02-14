@@ -3,5 +3,5 @@ type=python
 path=ZeroServerWizardManager.py
 class=ZeroServerWizardManager
 [METHODS]
-end_operations=adm,admins
+end_operations=sudo,admins
 get_samba_id=anonymous
