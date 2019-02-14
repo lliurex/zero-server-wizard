@@ -1,3 +1,9 @@
+zero-server-wizard (0.19) bionic; urgency=medium
+
+  * Adding sudo group to n4d plugin
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Thu, 14 Feb 2019 13:50:45 +0100
+
 zero-server-wizard (0.18) bionic; urgency=medium
 
   * Wait interfaces configuration
