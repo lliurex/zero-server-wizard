@@ -1,3 +1,9 @@
+zero-server-wizard (0.20) bionic; urgency=high
+
+  * Adding autofs functionality
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 18 Feb 2019 10:37:07 +0100
+
 zero-server-wizard (0.19) bionic; urgency=medium
 
   * Adding sudo group to n4d plugin
