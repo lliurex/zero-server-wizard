@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import xmlrpclib
+import os
 
 
 def check_variables():
@@ -60,7 +61,15 @@ if self.template["enable_data_replication"].lower() == "true":
 				ip='10.3.0.' + str(int(number_classroom))
 				share="10.3.0.254:/net/server-sync"
 				print r.add_share(remote_user,"NfsManager","/net/server-sync",ip)
-				print c.configure_mount_on_boot(user,"NfsManager",share,"/net/server-sync")
+				
+				# OLD MOUNT VIA NFSMANAGER
+				#print c.configure_mount_on_boot(user,"NfsManager",share,"/net/server-sync")
+				
+				print c.create_master_file(user,"AutofsManager","/net/server-sync","/etc/auto.lliurex")
+				print c.create_mount_script(user,"AutofsManager","/etc/auto.lliurex","*",share+"/&")
+				os.system("systemctl restart autofs")
+				
+				
 			if self.template["mount_nfs"]=="true":
 				print c.configure_mount_on_boot(user,"NfsManager",self.template["nfs_ip"],"/net/server-sync")
 				
