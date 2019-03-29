@@ -1,3 +1,9 @@
+zero-server-wizard (0.21) bionic; urgency=medium
+
+  * Adding sudo group
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Fri, 29 Mar 2019 13:19:28 +0100
+
 zero-server-wizard (0.20) bionic; urgency=high
 
   * Adding autofs functionality
