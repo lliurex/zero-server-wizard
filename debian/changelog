@@ -1,3 +1,9 @@
+zero-server-wizard (0.21) bionic; urgency=high
+
+  * Adding autofs clean_environment call on every flavor
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 15 Apr 2019 12:09:35 +0200
+
 zero-server-wizard (0.20) bionic; urgency=high
 
   * Adding autofs functionality
