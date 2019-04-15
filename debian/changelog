@@ -1,4 +1,4 @@
-zero-server-wizard (0.22) bionic; urgency=high
+zero-server-wizard (0.23) bionic; urgency=high
 
   * Adding autofs clean_environment call on every flavor
 
