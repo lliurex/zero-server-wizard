@@ -26,5 +26,5 @@ ret=check_variables()
 
 print c.clean_exports_file(user,"NfsManager")
 print c.remove_mount_on_boot(user,"NfsManager","/net/server-sync")
-print.clean_environment(user,"AutofsManager")
+print c.clean_environment(user,"AutofsManager")
 
