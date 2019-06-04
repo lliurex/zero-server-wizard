@@ -10,8 +10,5 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ --with zero,i18n
+	dh $@ --with zero,i18n,llxsrc
 
-override_dh_clean:
-	rm -f ./install-files/usr/share/banners/lliurex-neu/littlewizard.png
-	dh_clean

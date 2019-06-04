@@ -2,7 +2,7 @@ Source: zero-server-wizard
 Section: admin
 Priority: extra
 Maintainer: LliureX Team <lliurex@gva.es>
-Build-Depends: debhelper (>= 10), zero-dev, librsvg2-bin, python3-pkexec-debhelper, python3-poinstaller
+Build-Depends: debhelper (>= 10), zero-dev, llxsrchelper, python3-pkexec-debhelper, python3-poinstaller
 Standards-Version: 4.1.2
 Homepage: http://www.lliurex.net
 

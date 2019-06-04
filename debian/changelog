@@ -1,3 +1,9 @@
+zero-server-wizard (0.24) bionic; urgency=medium
+
+  * Using new art and llxsrchelper 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 04 Jun 2019 12:32:27 +0200
+
 zero-server-wizard (0.23) bionic; urgency=high
 
   * Adding autofs clean_environment call on every flavor
