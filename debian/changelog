@@ -1,3 +1,9 @@
+zero-server-wizard (0.24.1) bionic; urgency=medium
+
+  * Set REPLICATION_INTERFACE correctly
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Mon, 27 Jan 2020 16:40:30 +0100
+
 zero-server-wizard (0.24) bionic; urgency=medium
 
   * Using new art and llxsrchelper 
