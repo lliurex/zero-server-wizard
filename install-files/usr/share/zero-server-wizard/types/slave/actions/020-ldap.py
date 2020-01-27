@@ -52,11 +52,16 @@ if ret[0]:
 		if re.search('S(-[0-9]+)+',REMOTESID):
 			print c.set_sambasid(user,'SambaManager',REMOTESID)
 
+		replication_iface=self.template["replication_iface"]
+		# "(" as in (recommended) in zero-server-wizard combobox
+		if "(" in replication_iface:
+			replication_iface=external_iface
+
 		print c.reset_slapd(user,"SlapdManager")
 		print c.generate_ssl_certificates(user,"SlapdManager") 
 		print c.load_lliurex_schema(user,"SlapdManager") 
 		print c.enable_tls_communication(user,"SlapdManager",'/etc/ldap/ssl/slapd.cert','/etc/ldap/ssl/slapd.key')
-		print c.set_replicate_interface(user,'SlapdManager',self.template["external_iface"] + ':42')
+		print c.set_replicate_interface(user,'SlapdManager',replication_iface)
 		print c.configure_simple_slapd(user,'SlapdManager')
 		#Moved to 030
 		#print c.load_acl(user,"SlapdManager")

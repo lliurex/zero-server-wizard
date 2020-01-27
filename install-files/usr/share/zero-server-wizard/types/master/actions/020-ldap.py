@@ -38,12 +38,17 @@ if ret[0]:
 		else:
 			user=self.template["masterkey"]
 
+		replication_iface=self.template["replication_iface"]
+		# "(" as in (recommended) in zero-server-wizard combobox
+		if "(" in replication_iface:
+			replication_iface=external_iface
+
 		c = xmlrpclib.ServerProxy("https://"+ip_server+":9779")
 		print c.reset_slapd(user,"SlapdManager")
 		print c.generate_ssl_certificates(user,"SlapdManager") 
 		print c.load_lliurex_schema(user,"SlapdManager") 
 		print c.enable_tls_communication(user,"SlapdManager",'/etc/ldap/ssl/slapd.cert','/etc/ldap/ssl/slapd.key') 
-		print c.set_replicate_interface(user,'SlapdManager',self.template["external_iface"] + ':42')
+		print c.set_replicate_interface(user,'SlapdManager',replication_iface)
 		print c.configure_simple_slapd(user,"SlapdManager") 
 		#Moved to 030
 		#print c.load_acl(user,"SlapdManager")
