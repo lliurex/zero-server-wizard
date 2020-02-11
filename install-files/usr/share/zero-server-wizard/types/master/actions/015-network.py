@@ -81,6 +81,7 @@ if ret[0]:
 			print c.set_variable(user,"VariablesManager","CLIENT_PROXY_ENABLED",False)
 			
 		print c.set_nat(user,'NetworkManager',True,True, external_iface)
+		print c.set_nat_replication(user,'NetworkManager',True,True, replication_iface)
 		print c.set_routing(user,'NetworkManager',True,True)
 		
 		print c.systemd_resolved_conf(user,"NetworkManager")
