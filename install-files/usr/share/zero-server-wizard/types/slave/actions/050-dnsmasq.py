@@ -37,6 +37,7 @@ if ret[0]:
 
 		ip_server = self.template["remote_ip"]
 		c = xmlrpclib.ServerProxy("https://"+ip_server+":9779")
+		r = xmlrpclib.ServerProxy("https://10.3.0.254:9779")
 		#c = xmlrpclib.ServerProxy("https://192.168.1.2:9779")
 		
 		if "user" in self.template:
@@ -44,6 +45,13 @@ if ret[0]:
 		else:
 			user=self.template["masterkey"]
 		
+		if not "remote_user" in self.template:
+			self.template["remote_user"]="netadmin"
+			self.template["remote_password"]=self.template["adminpassword"]
+			
+		remote_user = (self.template["remote_user"],self.template["remote_password"])
+		number_classroom = self.template["number_classroom"]
+
 		#se necesita inicializar previamente las siguientes variables del n4d-network
 		#SRV_IP
 		#INTERNAL_NETWORK
@@ -53,6 +61,8 @@ if ret[0]:
 		print c.configure_service(user,'Dnsmasq',self.template["srv_domain_name"])
 		print c.set_dns_external(user,'Dnsmasq',[self.template["dns1"],self.template["dns2"]])
 		print c.set_dns_master_services(user,'Dnsmasq')
+		print r.add_node_center_model(remote_user,'Dnsmasq',self.template["srv_name"],'10.3.0.' + str(int(number_classroom)))
+		print c.add_node_center_model(user,'Dnsmasq','','10.3.0.254')
 	except Exception as e:
 		print e
 		raise e
