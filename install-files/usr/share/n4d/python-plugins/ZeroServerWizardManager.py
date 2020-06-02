@@ -17,8 +17,8 @@ class ZeroServerWizardManager:
 
 		objects["ZCenterVariables"].set_configured("zero-server-wizard")
 		objects["VariablesManager"].write_file()
-		os.system("systemctl restart resolvconf")
 		os.system("systemctl restart dnsmasq")
+		os.system("systemctl restart systemd-resolved")
 		os.system("systemctl restart smbd")
 		
 		try:
