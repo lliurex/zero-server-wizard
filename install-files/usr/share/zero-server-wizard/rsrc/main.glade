@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkAdjustment" id="adjustment1">
@@ -38,6 +38,9 @@ A restart after the initialization is needed.</property>
     <property name="window_position">center-always</property>
     <property name="default_width">760</property>
     <property name="default_height">550</property>
+    <child>
+      <placeholder/>
+    </child>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -243,17 +246,14 @@ A restart after the initialization is needed.</property>
                             <child>
                               <object class="GtkBox" id="box4">
                                 <property name="visible">True</property>
-                                <property name="sensitive">False</property>
                                 <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkViewport" id="viewport3">
                                     <property name="visible">True</property>
-                                    <property name="sensitive">False</property>
                                     <property name="can_focus">False</property>
                                     <child>
                                       <object class="GtkScrolledWindow" id="scrolledwindow2">
                                         <property name="visible">True</property>
-                                        <property name="sensitive">False</property>
                                         <property name="can_focus">True</property>
                                         <property name="shadow_type">in</property>
                                         <child>
