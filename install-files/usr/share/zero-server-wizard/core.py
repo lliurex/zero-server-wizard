@@ -130,38 +130,26 @@ class Core:
 		#background-image: -gtk-gradient (linear,	left top, right top, from (rgba(255,255,255,1)),  to (rgba(210,210,210,0)));
 
 		css = """
-		#ButtonBox {
-			background-image: -gtk-gradient (linear,	left top, right top, from (rgba(255,255,255,0.6)),  to (rgba(210,210,210,0)));
-		}
 		
 		#Window2 {
 			background-image: -gtk-gradient (linear,	left top, left bottom, from (#f86f05),  to (#d17e08));
 		}
 		
-		#Custom{
-			border-radius: 50px;
+	
+		entry:insensitive
+		{
+			color: #000000;
+			background-color: #cccccc;
 		}
 		
-		
-		GtkButton {
-		
-			border-radius:50px;
+		textview text
+		{
+			color: #282828;
 		}
 		
-		#Button{
-			background-image: -gtk-gradient (linear,	left top, left bottom, from (#f5f5f5),  to (#dedede));
+		notebook{
 			
-			border-radius: 0px;
-			
-		}
-		
-		.entry{
-			border-radius: 50px;
-		}
-		
-		GtkViewport{
-			
-			background-image: -gtk-gradient (linear,	left top, left bottom, from (rgba(255,255,255,1)),  to (rgba(210,210,210,1)));
+			background-image: -gtk-gradient (linear,	left top, left bottom, from (rgba(255,255,255,1)),  to (rgba(250,250,250,1)));
 		}
 
 
