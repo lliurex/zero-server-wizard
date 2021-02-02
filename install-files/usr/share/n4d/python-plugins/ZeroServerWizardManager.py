@@ -2,21 +2,21 @@ import os
 import multiprocessing
 import time
 import subprocess
-import lliurex.net
+
+import n4d.server.core
 
 class ZeroServerWizardManager:
 	
 	def __init__(self):
 		
-		pass
+		self.core=n4d.server.core.Core.get_core()
 		
 	#def init 
 	
 	
 	def end_operations(self):
 
-		objects["ZCenterVariables"].set_configured("zero-server-wizard")
-		objects["VariablesManager"].write_file()
+		self.core.get_plugin("ZCenterVariables").set_configured("zero-server-wizard")
 		os.system("systemctl restart dnsmasq")
 		os.system("systemctl restart systemd-resolved")
 		os.system("systemctl restart smbd")
@@ -55,8 +55,7 @@ class ZeroServerWizardManager:
 	def _t_restart(self):
 		
 		time.sleep(1)
-		
-		os.system("kill -9 $(cat /tmp/.n4d_pid)")
+		os.system("kill -9 $(cat /run/n4d/token)")
 	
 	
 #class ZeroServerWizardManager
