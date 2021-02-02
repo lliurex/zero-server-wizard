@@ -1,0 +1,20 @@
+{
+    "SETUP": {
+        "type": "python",
+        "path": "ZeroServerWizardManager.py",
+        "class": "ZeroServerWizardManager"
+    },
+    "METHODS": {
+        "end_operations": {
+            "allowed_groups": [
+                "sudo",
+                "admins"
+            ]
+        },
+        "get_samba_id": {
+            "allowed_groups": [
+                "anonymous"
+            ]
+        }
+    }
+}
