@@ -1,12 +1,10 @@
 import os
 import os.path
-import xmlrpclib
 import datetime
 import subprocess
 import sys
 import multiprocessing
 
-from cStringIO import StringIO
 
 
 import lliurex.net
@@ -606,7 +604,7 @@ class Slave:
 
 							
 				except Exception as e:
-					print "[ERROR!] " + str(e)
+					print("[ERROR!] " + str(e))
 
 					try:
 						f=open("/tmp/.zsw-error","w")

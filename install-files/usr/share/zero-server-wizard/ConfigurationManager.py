@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import ConfigParser
+import configparser as ConfigParser
 import os
 
 ZSW_LOG="/var/log/zero-server-wizard/zsw-log"
@@ -46,16 +46,16 @@ class ConfigurationManager:
 		
 		for server in self.servers:
 		
-			print ""
-			print server.id
-			print server.server_name["en"]
-			print server.server_name["es"]
-			print server.server_name["qcv"]
-			print server.info["en"]
-			print server.info["es"]
-			print server.info["qcv"]
-			print server.folder
-			print server.icon
+			print("")
+			print(server.id)
+			print(server.server_name["en"])
+			print(server.server_name["es"])
+			print(server.server_name["qcv"])
+			print(server.info["en"])
+			print(server.info["es"])
+			print(server.info["qcv"])
+			print(server.folder)
+			print(server.icon)
 		
 	#def print_servers
 
