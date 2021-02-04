@@ -1,6 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import xmlrpclib
+import xmlrpc.client
+import ssl
 
 def check_environment():
 
@@ -8,9 +9,12 @@ def check_environment():
         if "masterkey" not in self.template:
             return (False,"No authentication method found")
     else:
-        c=xmlrpclib.ServerProxy("https://"+self.template["remote_ip"]+":9779",allow_none=True)
-        det=c.validate_user(self.template["user"],self.template["password"])
-        if not ret[0]:
+        context=ssl._create_unverified_context()
+        c = xmlrpc.client.ServerProxy('https://'+self.template["remote_ip"]+':9779',context=context,allow_none=True)
+        ret=c.validate_user(self.template["user"],self.template["password"])
+        if ret["status"]!=0:
+            return(False,"User validation error")
+        if not ret["return"][0]:
             return(False,"User validation error")
     return (True,"")
 
@@ -20,6 +24,7 @@ if check_environment()[0]:
         user=(self.template["user"],self.template["password"])
     else:
         user=self.template["masterkey"]
-    c=xmlrpclib.ServerProxy("https://"+ip_server+":9779",allow_none=True)
+    context=ssl._create_unverified_context()
+    c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
     print(c.clean_nat_services( user, 'NetworkManager' ))
 
