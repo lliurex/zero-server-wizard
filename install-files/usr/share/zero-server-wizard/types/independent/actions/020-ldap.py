@@ -10,6 +10,9 @@ def check_variables():
 		if "masterkey" not in self.template:
 			return (False,"No authentication method found")
 	else:	
+			ip_server = self.template["remote_ip"]
+			context=ssl._create_unverified_context()
+			c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 			ret=c.validate_user(self.template["user"],self.template["password"])
 			if ret["status"]!=0:
 				return(False,"User validation error")
@@ -37,22 +40,25 @@ if ret[0]:
 		else:
 			user=self.template["masterkey"]
 
-		c = xmlrpclib.ServerProxy("https://"+ip_server+":9779")
-		print c.reset_slapd(user,"SlapdManager")
-		print c.generate_ssl_certificates(user,"SlapdManager") 
-		print c.load_lliurex_schema(user,"SlapdManager") 
-		print c.enable_tls_communication(user,"SlapdManager",'/etc/ldap/ssl/slapd.cert','/etc/ldap/ssl/slapd.key') 
-		print c.configure_simple_slapd(user,"SlapdManager") 
+		
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
+		
+		print(c.reset_slapd(user,"SlapdManager"))
+		print(c.generate_ssl_certificates(user,"SlapdManager"))
+		print(c.load_lliurex_schema(user,"SlapdManager"))
+		print(c.enable_tls_communication(user,"SlapdManager",'/etc/ldap/ssl/slapd.cert','/etc/ldap/ssl/slapd.key'))
+		print(c.configure_simple_slapd(user,"SlapdManager"))
 		#Moved to 030
 		#print c.load_acl(user,"SlapdManager")
-		print c.open_ports_slapd(user,"SlapdManager",self.template["srv_ip"]) 
-		print c.reboot_slapd(user,"SlapdManager") 
-		print c.load_basic_struture(user,"SlapdManager")
-		print c.change_admin_passwd(user,"SlapdManager",self.template["adminpassword"])
-		print c.enable_folders(user,"SlapdManager")
-		print c.clean_master_server_ip(user,"SlapdManager")
+		print(c.open_ports_slapd(user,"SlapdManager",self.template["srv_ip"]) )
+		print(c.reboot_slapd(user,"SlapdManager") )
+		print(c.load_basic_struture(user,"SlapdManager"))
+		print(c.change_admin_passwd(user,"SlapdManager",self.template["adminpassword"]))
+		print(c.enable_folders(user,"SlapdManager"))
+		print(c.clean_master_server_ip(user,"SlapdManager"))
 	except Exception as e:
-		print e
+		print(e)
 		raise e
 	
 else:

@@ -9,12 +9,14 @@ def check_variables():
 		if "masterkey" not in self.template:
 			return (False,"No authentication method found")
 	else:	
-			ret=c.validate_user(self.template["user"],self.template["password"])
-			if ret["status"]!=0:
-				return(False,"User validation error")
-			if not ret["return"][0]:
-				return(False,"User validation error")
-
+		ip_server = self.template["remote_ip"]
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
+		ret=c.validate_user(self.template["user"],self.template["password"])
+		if ret["status"]!=0:
+			return(False,"User validation error")
+		if not ret["return"][0]:
+			return(False,"User validation error")
 
 			
 	return (True,"")
@@ -27,14 +29,15 @@ ret=check_variables()
 if ret[0]:
 
 	try:
-		server=self.template["remote_ip"]
+		ip_server=self.template["remote_ip"]
 		
 		if "user" in self.template:
 			user=(self.template["user"],self.template["password"])
 		else:
 			user=self.template["masterkey"]
 
-		c=xmlrpclib.ServerProxy("https://"+server+":9779")
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		
 		#print c.get_methods('N4dProxy')
 		#se necesitan las siguientes variables del n4d-proxy
@@ -44,10 +47,10 @@ if ret[0]:
 		#se necesitan las siguientes variables del n4d-dnsmasq
 		#INTERNAL_DOMAIN
 
-		print c.load_exports(user,"N4dProxy")
+		print(c.load_exports(user,"N4dProxy"))
 		
 	except Exception as e:
-		print e
+		print(e)
 		raise e
 		
 else:

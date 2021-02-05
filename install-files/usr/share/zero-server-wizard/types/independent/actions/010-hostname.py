@@ -63,7 +63,7 @@ if ret[0]:
 				#raise Exception
 				
 			
-			elif ret["HOSTNAME"]==self.template["srv_name"] and not os.path.exists("/tmp/zsw.reboot"):
+			elif ret["return"]["HOSTNAME"]==self.template["srv_name"] and not os.path.exists("/tmp/zsw.reboot"):
 				
 				ret2=c.get_hostname_n4d("","Hostname")
 				if ret2["status"]==0 and "HOSTNAME" in ret2["return"] and ret2["return"]["HOSTNAME"]!=self.template["srv_name"]:
