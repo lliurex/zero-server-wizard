@@ -539,7 +539,7 @@ class Master:
 						self.log("Excuting " + f + " ...")
 						print("[MASTER] Executing " + f + " ...")
 						if not gui:
-							execfile(self.scripts_path+f,locals())
+							exec(open(self.scripts_path+f).read(),locals())
 						else:
 							
 							#.set_text(ret_textview.get_buffer().get_text(ret_textview.get_buffer().get_start_iter(),ret_textview.get_buffer().get_end_iter(),True)+ "\npor aqui")
@@ -547,7 +547,7 @@ class Master:
 							f_=open("/tmp/.zsw-log","a")
 							f_.write("[MASTER] Executing " + f + " ... ")
 							f_.close()							
-							execfile(self.scripts_path+f,locals())
+							exec(open(self.scripts_path+f).read(),locals())
 							f_=open("/tmp/.zsw-log","a")
 							f_.write(" OK\n")
 							f_.close()
