@@ -1,3 +1,12 @@
+zero-server-wizard (0.31) focal; urgency=medium
+
+  * Fixed python2 to python3 dict merging
+  * Fixed prints in 010 hostname
+  * Fixed responses management in 010 hostname
+  * Changed function name in 015 network
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 11 Feb 2021 10:47:31 +0100
+
 zero-server-wizard (0.30.1) focal; urgency=medium
 
   * Fixed shebang
