@@ -460,10 +460,11 @@ class Independent:
 		#self.template=template
 		self.log("Executing Independent configuration...")
 
-		self.core.template=dict(self.core.template.items() + self.template.items())
+		#self.core.template=dict(self.core.template.items() + self.template.items())
+		self.core.template.update(self.template)
 		self.template=self.core.template
 		
-		if not self.template.has_key("remote_ip"):
+		if "remote_ip" not  in self.template:
 			self.template["remote_ip"]="localhost"
 		
 		
