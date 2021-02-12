@@ -4,6 +4,7 @@ import time
 import subprocess
 
 import n4d.server.core
+import n4d.responses
 
 class ZeroServerWizardManager:
 	
@@ -34,7 +35,7 @@ class ZeroServerWizardManager:
 		p=multiprocessing.Process(target=self._t_restart)
 		p.start()
 		
-		return True
+		return n4d.responses.build_successful_call_response()
 		
 	#def end_operations
 	
@@ -45,9 +46,9 @@ class ZeroServerWizardManager:
 			sambaid = pprocess.communicate()[0]
 			aux = sambaid.split(":")[1]
 			id=aux[1:len(aux)-1]
-			return id
+			return n4d.responses.build_successful_call_response(id)
 		except:
-			return None
+			return n4d.responses.build_failed_call_response()
 	
 		
 	#def get_samba_id	
@@ -56,6 +57,6 @@ class ZeroServerWizardManager:
 		
 		time.sleep(1)
 		os.system("kill -9 $(cat /run/n4d/token)")
-	
+		return n4d.responses.build_successful_call_response()
 	
 #class ZeroServerWizardManager
