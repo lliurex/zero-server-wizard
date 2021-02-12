@@ -1,3 +1,9 @@
+zero-server-wizard (0.32) focal; urgency=medium
+
+  * Fixed dnsmasq calls 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 12 Feb 2021 13:42:34 +0100
+
 zero-server-wizard (0.31) focal; urgency=medium
 
   * Fixed python2 to python3 dict merging
