@@ -1,3 +1,9 @@
+zero-server-wizard (0.32.1) focal; urgency=medium
+
+  * Added lliurex-grub-custom dependency
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 12 Feb 2021 14:33:48 +0100
+
 zero-server-wizard (0.32) focal; urgency=medium
 
   * Fixed dnsmasq calls 

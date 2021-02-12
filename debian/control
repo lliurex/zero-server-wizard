@@ -9,6 +9,6 @@ Homepage: http://www.lliurex.net
 Package: zero-server-wizard
 Architecture: all
 Pre-Depends: zero-center (>=14.06.1)
-Depends: ${shlibs:Depends}, ${misc:Depends}, python3, policykit-1, gir1.2-gtk-3.0
+Depends: ${shlibs:Depends}, ${misc:Depends}, python3, policykit-1, gir1.2-gtk-3.0, lliurex-grub-custom
 Description: Lliurex server wizard
  Assistant to initialize lliurex servers
