@@ -1,3 +1,9 @@
+zero-server-wizard (0.32.2) focal; urgency=medium
+
+  * Fixed expand in progress window
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 15 Feb 2021 11:22:06 +0100
+
 zero-server-wizard (0.32.1) focal; urgency=medium
 
   * Added lliurex-grub-custom dependency
