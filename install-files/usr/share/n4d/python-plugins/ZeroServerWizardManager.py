@@ -18,6 +18,7 @@ class ZeroServerWizardManager:
 	def end_operations(self):
 
 		self.core.get_plugin("ZCenterVariables").set_configured("zero-server-wizard")
+		os.system("systemctl restart network-manager")
 		os.system("systemctl restart dnsmasq")
 		os.system("systemctl restart systemd-resolved")
 		os.system("systemctl restart smbd")
