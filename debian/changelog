@@ -1,3 +1,9 @@
+zero-server-wizard (0.35) focal; urgency=medium
+
+  * Minor bugs in master actions
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 16 Feb 2021 10:34:08 +0100
+
 zero-server-wizard (0.34) focal; urgency=medium
 
   * Porting master actions to python3
