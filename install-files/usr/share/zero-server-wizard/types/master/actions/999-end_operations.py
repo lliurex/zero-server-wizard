@@ -39,7 +39,7 @@ if ret[0]:
 		context=ssl._create_unverified_context()
 		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		
-		print c.end_operations(user,"ZeroServerWizardManager")
+		print(c.end_operations(user,"ZeroServerWizardManager"))
 		
 	except Exception as e:
 		print(e)
