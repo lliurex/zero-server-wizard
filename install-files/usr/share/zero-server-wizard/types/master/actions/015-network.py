@@ -84,7 +84,7 @@ if ret[0]:
 		print c.set_nat_replication(user,'NetworkManager',True,True, replication_iface)
 		print c.set_routing(user,'NetworkManager',True,True)
 		
-		print c.systemd_resolved_conf(user,"NetworkManager")
+		print c.systemd_resolv_conf(user,"NetworkManager")
 		print c.apply_changes(user,"NetworkManager")
 		print c.check_devices(user,"NetworkManager",[internal_iface,external_iface, replication_iface],60)
 		
