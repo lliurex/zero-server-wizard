@@ -50,8 +50,8 @@ if ret[0]:
 		#INTERNAL_MASK
 		#INTERNAL_INTERFACE
 
-		print c.configure_service(user,'Dnsmasq',self.template["srv_domain_name"])
-		print c.set_dns_external(user,'Dnsmasq',[self.template["dns1"],self.template["dns2"]])
+		print c.configure_service(user,'DnsmasqManager',self.template["srv_domain_name"])
+		print c.set_dns_external(user,'DnsmasqManager',[self.template["dns1"],self.template["dns2"]])
 	except Exception as e:
 		print e
 		raise e
