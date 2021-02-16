@@ -53,7 +53,7 @@ if ret[0]:
 			print(e)
 			raise e		
 		
-	else:
-		e=Exception()
-		e.message=ret[1]
-		raise e
+else:
+	e=Exception()
+	e.message=ret[1]
+	raise e
