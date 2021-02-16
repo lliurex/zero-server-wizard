@@ -1,3 +1,9 @@
+zero-server-wizard (0.34) focal; urgency=medium
+
+  * Porting master actions to python3
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 16 Feb 2021 09:20:34 +0100
+
 zero-server-wizard (0.33) focal; urgency=medium
 
   * Added network-manager restart
