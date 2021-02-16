@@ -1,23 +1,23 @@
-#!/usr/bin/python
-import xmlrpclib
+#!/usr/bin/python3
+
+import xmlrpc.client
+import ssl
 
 
 def check_variables():
 	
 	if ("user" and "password") not in self.template:
-		
 		if "masterkey" not in self.template:
-			
 			return (False,"No authentication method found")
-
-			
 	else:	
-		c=xmlrpclib.ServerProxy("https://"+self.template["remote_ip"]+":9779")
+		ip_server = self.template["remote_ip"]
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		ret=c.validate_user(self.template["user"],self.template["password"])
-		if not ret[0]:
+		if ret["status"]!=0:
 			return(False,"User validation error")
-		
-
+		if not ret["return"][0]:
+			return(False,"User validation error")
 
 	lst=["srv_name","srv_domain_name","dns1","dns2"]
 	for item in lst:
@@ -36,8 +36,8 @@ if ret[0]:
 	try:
 
 		ip_server = self.template["remote_ip"]
-		c = xmlrpclib.ServerProxy("https://"+ip_server+":9779")
-		#c = xmlrpclib.ServerProxy("https://192.168.1.2:9779")
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		
 		if "user" in self.template:
 			user=(self.template["user"],self.template["password"])
@@ -50,10 +50,10 @@ if ret[0]:
 		#INTERNAL_MASK
 		#INTERNAL_INTERFACE
 
-		print c.configure_service(user,'DnsmasqManager',self.template["srv_domain_name"])
-		print c.set_dns_external(user,'DnsmasqManager',[self.template["dns1"],self.template["dns2"]])
+		print(c.configure_service(user,'DnsmasqManager',self.template["srv_domain_name"]))
+		print(c.set_dns_external(user,'DnsmasqManager',[self.template["dns1"],self.template["dns2"]]))
 	except Exception as e:
-		print e
+		print(e)
 		raise e
 else:
 	e=Exception()

@@ -28,6 +28,12 @@ ret=check_variables()
 # Cleaning process just in case this is a reinitalization
 
 if ret[0]:
+	
+	if "user" in self.template:
+		user=(self.template["user"],self.template["password"])
+	else:
+		user=self.template["masterkey"]	
+	
 	ip_server = self.template["remote_ip"]
 	context=ssl._create_unverified_context()
 	c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
