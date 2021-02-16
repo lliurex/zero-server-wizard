@@ -20,7 +20,7 @@ def check_variables():
 			if not ret["return"][0]:
 				return(False,"User validation error")
 
-	lst=["external_iface","internal_iface","srv_ip","internal_mask","external_mask","external_ip","external_gateway","external_mode","replication_interface"]
+	lst=["external_iface","internal_iface","srv_ip","internal_mask","external_mask","external_ip","external_gateway","external_mode","replication_iface"]
 	for item in lst:
 		if item not in self.template:
 			print("\t[015-network] [!]" + item + " is missing from template. Aborting initialization")
