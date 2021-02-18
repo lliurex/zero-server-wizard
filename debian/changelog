@@ -1,3 +1,9 @@
+zero-server-wizard (0.36) focal; urgency=medium
+
+  * Porting slave actions to python3
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 18 Feb 2021 11:46:50 +0100
+
 zero-server-wizard (0.35.1) focal; urgency=medium
 
   * Minor bugs in master actions
