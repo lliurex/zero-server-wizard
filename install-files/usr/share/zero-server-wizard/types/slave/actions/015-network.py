@@ -44,9 +44,9 @@ if ret[0]:
 		context=ssl._create_unverified_context()
 		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 
+		number_classroom = str(int(self.template["number_classroom"]))
 		internal_iface=self.template["internal_iface"]
 		internal_mask=self.template["internal_mask"]
-		
 		external_mask=self.template["external_mask"]
 		external_mode=self.template["external_mode"]
 		external_gateway=self.template["external_gateway"]
@@ -54,7 +54,6 @@ if ret[0]:
 		external_iface=self.template["external_iface"]
 		external_dns_search = self.template["srv_domain_name"]
 		srv_ip=self.template["srv_ip"]
-		
 		replication_iface=self.template["replication_iface"]
 
 		# "(" as in (recommended) in zero-server-wizard combobox

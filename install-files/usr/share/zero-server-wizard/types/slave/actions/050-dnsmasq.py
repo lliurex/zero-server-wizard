@@ -61,11 +61,11 @@ if ret[0]:
 		#INTERNAL_MASK
 		#INTERNAL_INTERFACE
 
-		print(c.configure_service(user,'Dnsmasq',self.template["srv_domain_name"]))
-		print(c.set_dns_external(user,'Dnsmasq',[self.template["dns1"],self.template["dns2"]]))
-		print(c.set_dns_master_services(user,'Dnsmasq'))
-		print(r.add_node_center_model(remote_user,'Dnsmasq',self.template["srv_name"],'10.3.0.' + str(int(number_classroom))))
-		print(c.add_node_center_model(user,'Dnsmasq','','10.3.0.254'))
+		print(c.configure_service(user,'DnsmasqManager',self.template["srv_domain_name"]))
+		print(c.set_dns_external(user,'DnsmasqManager',[self.template["dns1"],self.template["dns2"]]))
+		print(c.set_dns_master_services(user,'DnsmasqManager'))
+		print(r.add_node_center_model(remote_user,'DnsmasqManager',self.template["srv_name"],'10.3.0.' + str(int(number_classroom))))
+		print(c.add_node_center_model(user,'DnsmasqManager','','10.3.0.254'))
 	except Exception as e:
 		print(e)
 		raise e
