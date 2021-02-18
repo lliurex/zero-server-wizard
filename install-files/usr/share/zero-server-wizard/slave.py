@@ -572,7 +572,7 @@ class Slave:
 		self.core.template.update(self.template)
 		self.template=self.core.template
 
-		if not self.template.has_key("remote_ip"):
+		if "remote_ip" not in self.template:
 			self.template["remote_ip"]="localhost"
 
 		
