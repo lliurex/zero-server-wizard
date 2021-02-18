@@ -30,7 +30,6 @@ if ret[0]:
 
 	try:
 		
-		
 		if "user" in self.template:
 			user=(self.template["user"],self.template["password"])
 		else:

@@ -22,8 +22,8 @@ def check_variables():
 	lst=["srv_name","srv_domain_name","dns1","dns2"]
 	for item in lst:
 		if item not in self.template:
-			print("\t[050-ldap] [!]" + item + " is missing from template. Aborting initialization")
-			return (False,"[050-ldap] [!]" + item + " is missing from template. Aborting initialization")
+			print("\t[050-dnsmasq] [!]" + item + " is missing from template. Aborting initialization")
+			return (False,"[050-dnsmasq] [!]" + item + " is missing from template. Aborting initialization")
 			
 	return (True,"")
 	

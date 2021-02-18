@@ -1,23 +1,23 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import xmlrpclib
+import xmlrpc.client
+import ssl
 import os.path
 
 
 def check_variables():
 	try:
-		c=xmlrpclib.ServerProxy("https://"+self.template["remote_ip"]+":9779")
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+self.template["remote_ip"]+':9779',context=context,allow_none=True)
 		if ("user" and "password") not in self.template:
-		
 			if "masterkey" not in self.template:
-			
 				return (False,"No authentication method found")
-
-		else:	
+		else:
 			ret=c.validate_user(self.template["user"],self.template["password"])
-			if not ret[0]:
+			if ret["status"]!=0:
 				return(False,"User validation error")
-		
+			if not ret["return"][0]:
+				return(False,"User validation error")
 
 
 		lst=["srv_name"]
@@ -28,13 +28,13 @@ def check_variables():
 			
 		return (True,"")
 	except Exception as e:
-		print e
+		print(e)
 		return(False,str(e))
 	
 #def check_variables
 
 def print_reboot():
-	print "Hostname has been changed. You need to reboot the machine before continuing."
+	print("Hostname has been changed. You need to reboot the machine before continuing.")
 
 
 ret=check_variables()
@@ -47,11 +47,13 @@ if ret[0]:
 			user=(self.template["user"],self.template["password"])
 		else:
 			user=self.template["masterkey"]
-		c=xmlrpclib.ServerProxy("https://"+ip_server+":9779")
+		context=ssl._create_unverified_context()
+		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		ret=c.get_hostname_file("","Hostname")
-		if ret["status"]:
+		if ret["status"]==0:
 			
-			if ret["HOSTNAME"]!=self.template["srv_name"]:
+			hostname=ret["return"]
+			if hostname!=self.template["srv_name"]:
 				
 				c.set_hosts_file(user,"Hostname",self.template["srv_name"])
 				c.set_hostname_file(user,"Hostname",self.template["srv_name"])
@@ -62,11 +64,13 @@ if ret[0]:
 				#raise Exception
 				
 			
-			elif ret["HOSTNAME"]==self.template["srv_name"] and not os.path.exists("/tmp/zsw.reboot"):
+			elif hostname==self.template["srv_name"] and not os.path.exists("/tmp/zsw.reboot"):
 				
 				ret2=c.get_hostname_n4d("","Hostname")
-				if ret2["HOSTNAME"]!=self.template["srv_name"]:
-					c.set_hostname_n4d(user,"Hostname",self.template["srv_name"])
+				if ret2["status"]==0:
+					n4d_hostname=ret2["return"]
+					if n4d_hostname != self.template["srv_name"]:
+						c.set_hostname_n4d(user,"Hostname",self.template["srv_name"])
 				
 				
 			else:
@@ -88,6 +92,6 @@ if ret[0]:
 	
 else:
 	e=Exception()
-	print e
+	print(e)
 	e.message=ret[1]
 	raise e
