@@ -2,6 +2,7 @@
 
 import xmlrpc.client
 import ssl
+import re
 
 
 def check_variables():
