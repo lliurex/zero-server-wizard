@@ -3,7 +3,7 @@
 import xmlrpc.client
 import ssl
 import re
-
+import time
 
 def check_variables():
 
@@ -51,7 +51,7 @@ if ret[0]:
 		c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
 		rcontext=ssl._create_unverified_context()
 		r = xmlrpc.client.ServerProxy('https://10.3.0.254:9779',context=rcontext,allow_none=True)
-		
+		time.sleep(5)
 
 		ret=r.get_variable('SAMBASID')
 		if ret["status"]==0:
