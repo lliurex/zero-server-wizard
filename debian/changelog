@@ -1,3 +1,9 @@
+zero-server-wizard (0.37) focal; urgency=medium
+
+  * Added temporary sleep in 020-ldap slave action
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 30 Jun 2021 16:45:24 +0200
+
 zero-server-wizard (0.36.1) focal; urgency=medium
 
   * Fixed slave action bugs
