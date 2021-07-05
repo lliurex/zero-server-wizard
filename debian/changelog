@@ -1,3 +1,9 @@
+zero-server-wizard (0.38) focal; urgency=medium
+
+  * Clear replication vars & lliurex-mirror-redirect service into independent initialization
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Mon, 05 Jul 2021 19:49:34 +0200
+
 zero-server-wizard (0.37) focal; urgency=medium
 
   * Added temporary sleep in 020-ldap slave action
