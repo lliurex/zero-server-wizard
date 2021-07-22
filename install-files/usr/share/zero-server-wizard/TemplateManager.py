@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import ConfigParser
+import configparser as ConfigParser
 import os
 import os.path
 import sys
@@ -51,7 +51,7 @@ class TemplateManager:
 				
 			except Exception as e:
 				
-				print e
+				print(e)
 				return None
 			
 		

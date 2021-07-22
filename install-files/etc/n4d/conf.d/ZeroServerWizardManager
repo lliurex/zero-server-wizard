@@ -1,7 +1,0 @@
-[SETUP]
-type=python
-path=ZeroServerWizardManager.py
-class=ZeroServerWizardManager
-[METHODS]
-end_operations=sudo,admins
-get_samba_id=anonymous

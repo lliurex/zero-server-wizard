@@ -129,7 +129,7 @@ class Core:
 		#background-image: -gtk-gradient (linear,	left top, left bottom, from (rgba(255,255,255,1)),  to (rgba(210,210,210,1)));
 		#background-image: -gtk-gradient (linear,	left top, right top, from (rgba(255,255,255,1)),  to (rgba(210,210,210,0)));
 
-		css = """
+		css = b"""
 		
 		#Window2 {
 			background-image: -gtk-gradient (linear,	left top, left bottom, from (#f86f05),  to (#d17e08));
@@ -313,7 +313,7 @@ def try_root():
 				response = dialog.run()
 				dialog.destroy()				
 			except Exception as e:
-				print e
+				print(e)
 		
 		return False
 
@@ -336,7 +336,7 @@ if __name__=="__main__":
 				try:
 					mode=sys.argv[counter+1]
 				except Exception as e:
-					print e
+					print(e)
 					usage()
 					sys.exit(1)
 			if item=="-t" or item=="--template":

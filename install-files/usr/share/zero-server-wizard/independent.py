@@ -1,11 +1,9 @@
 import os
 import os.path
-import xmlrpclib
 import datetime
 import subprocess
 import sys
 import multiprocessing
-from cStringIO import StringIO
 
 
 import lliurex.net
@@ -462,10 +460,11 @@ class Independent:
 		#self.template=template
 		self.log("Executing Independent configuration...")
 
-		self.core.template=dict(self.core.template.items() + self.template.items())
+		#self.core.template=dict(self.core.template.items() + self.template.items())
+		self.core.template.update(self.template)
 		self.template=self.core.template
 		
-		if not self.template.has_key("remote_ip"):
+		if "remote_ip" not  in self.template:
 			self.template["remote_ip"]="localhost"
 		
 		
@@ -480,7 +479,7 @@ class Independent:
 						self.log("Excuting " + f + " ...")
 						print("[INDEPENDENT] Executing " + f + " ...")
 						if not gui:
-							execfile(self.scripts_path+f,locals())
+							exec(open(self.scripts_path+f).read(),locals())
 						else:
 							
 							#.set_text(ret_textview.get_buffer().get_text(ret_textview.get_buffer().get_start_iter(),ret_textview.get_buffer().get_end_iter(),True)+ "\npor aqui")
@@ -488,7 +487,7 @@ class Independent:
 							f_=open("/tmp/.zsw-log","a")
 							f_.write("[INDEPENDENT] Executing " + f + " ... ")
 							f_.close()
-							execfile(self.scripts_path+f,locals())
+							exec(open(self.scripts_path+f).read(),locals())
 							f_=open("/tmp/.zsw-log","a")
 							f_.write(" OK\n")
 							f_.close()
@@ -497,7 +496,7 @@ class Independent:
 
 							
 				except Exception as e:
-					print "[ERROR!] " + str(e)
+					print("[ERROR!] " + str(e))
 
 					try:
 						f=open("/tmp/.zsw-error","w")

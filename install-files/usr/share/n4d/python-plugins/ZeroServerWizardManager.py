@@ -2,21 +2,23 @@ import os
 import multiprocessing
 import time
 import subprocess
-import lliurex.net
+
+import n4d.server.core
+import n4d.responses
 
 class ZeroServerWizardManager:
 	
 	def __init__(self):
 		
-		pass
+		self.core=n4d.server.core.Core.get_core()
 		
 	#def init 
 	
 	
 	def end_operations(self):
 
-		objects["ZCenterVariables"].set_configured("zero-server-wizard")
-		objects["VariablesManager"].write_file()
+		self.core.get_plugin("ZCenterVariables").set_configured("zero-server-wizard")
+		os.system("systemctl restart network-manager")
 		os.system("systemctl restart dnsmasq")
 		os.system("systemctl restart systemd-resolved")
 		os.system("systemctl restart smbd")
@@ -34,7 +36,7 @@ class ZeroServerWizardManager:
 		p=multiprocessing.Process(target=self._t_restart)
 		p.start()
 		
-		return True
+		return n4d.responses.build_successful_call_response()
 		
 	#def end_operations
 	
@@ -45,9 +47,9 @@ class ZeroServerWizardManager:
 			sambaid = pprocess.communicate()[0]
 			aux = sambaid.split(":")[1]
 			id=aux[1:len(aux)-1]
-			return id
+			return n4d.responses.build_successful_call_response(id)
 		except:
-			return None
+			return n4d.responses.build_failed_call_response()
 	
 		
 	#def get_samba_id	
@@ -55,8 +57,7 @@ class ZeroServerWizardManager:
 	def _t_restart(self):
 		
 		time.sleep(1)
-		
-		os.system("kill -9 $(cat /tmp/.n4d_pid)")
-	
+		os.system("kill -9 $(cat /run/n4d/token)")
+		return n4d.responses.build_successful_call_response()
 	
 #class ZeroServerWizardManager
