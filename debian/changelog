@@ -1,3 +1,9 @@
+zero-server-wizard (0.39) focal; urgency=medium
+
+  * Removing old proxy calls
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 22 Jul 2021 13:21:01 +0200
+
 zero-server-wizard (0.38) focal; urgency=medium
 
   * Clear replication vars & lliurex-mirror-redirect service into independent initialization
