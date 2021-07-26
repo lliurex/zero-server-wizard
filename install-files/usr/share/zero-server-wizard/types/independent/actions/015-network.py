@@ -58,6 +58,7 @@ if ret[0]:
 		print(c.load_network_file(user,'NetworkManager'))
 		# print c.delete_interfaces_in_range(user,'NetworkManager','10.3.0.0/24')
 		print(c.set_replication_interface(user,'NetworkManager',None, None, None, False))
+		print(c.delete_variable(user,"INTERFACE_REPLICATION"))
 		print(c.set_internal_interface(user,'NetworkManager',internal_iface))
 		print(c.set_external_interface(user,'NetworkManager',external_iface))
 		
