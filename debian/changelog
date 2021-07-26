@@ -1,3 +1,9 @@
+zero-server-wizard (0.41) focal; urgency=medium
+
+  * Removing previous commit. 05-clean already unsets INTERFACE_REPLICATION
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 26 Jul 2021 18:42:24 +0200
+
 zero-server-wizard (0.40) focal; urgency=medium
 
   * Deleting INTERFACE_REPLICATION in independet servers
