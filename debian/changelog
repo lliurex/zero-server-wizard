@@ -1,4 +1,4 @@
-zero-server-wizard (0.27) bionic; urgency=medium
+zero-server-wizard (0.28) bionic; urgency=medium
 
   * Removing replication interface if independent server is initialized
 
