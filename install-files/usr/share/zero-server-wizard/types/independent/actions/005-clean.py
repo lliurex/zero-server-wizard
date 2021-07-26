@@ -22,4 +22,4 @@ if check_environment()[0]:
         user=self.template["masterkey"]
     c=xmlrpclib.ServerProxy("https://"+ip_server+":9779",allow_none=True)
     print(c.clean_nat_services( user, 'NetworkManager' ))
-
+    print(c.set_replicate_interface(user,'NetworkManager',None))
