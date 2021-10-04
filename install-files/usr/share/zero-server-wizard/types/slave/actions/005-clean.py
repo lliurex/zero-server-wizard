@@ -27,4 +27,5 @@ if check_environment()[0]:
     context=ssl._create_unverified_context()
     c = xmlrpc.client.ServerProxy('https://'+ip_server+':9779',context=context,allow_none=True)
     print(c.clean_nat_services( user, 'NetworkManager' ))
-
+    print(c.clean_mirror_redirect_service( user, 'NetworkManager'))
+    print(c.unset_replication_vars( user, 'NetworkManager'))
