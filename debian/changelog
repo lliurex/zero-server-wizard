@@ -1,3 +1,9 @@
+zero-server-wizard (0.30) bionic; urgency=medium
+
+  * using ldap password instead of netadmin in samba/slave
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 19 Oct 2021 17:13:22 +0200
+
 zero-server-wizard (0.29) bionic; urgency=medium
 
   * Removing replication interface to every flavor, just in case
