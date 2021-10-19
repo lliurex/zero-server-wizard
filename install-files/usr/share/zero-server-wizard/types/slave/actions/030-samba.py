@@ -51,7 +51,11 @@ if ret[0]:
 		print(c.configure_smb(user,'SambaManager'))
 		print(c.load_acl_samba_education(user,'SambaManager'))
 		print(c.load_acl(user,"SlapdManager"))
-		print(c.update_root_password_samba(user,'SambaManager',self.template['adminpassword']))
+		result = r.get_ldap_password(remote_user,'SlapdManager')
+		if result["status"]!=0:
+			raise Exception(result['msg'])
+		ldap_password = result['return']
+		print(c.update_root_password_samba(user,'SambaManager',ldap_password))
 		
 	except Exception as e:
 		print(e)
