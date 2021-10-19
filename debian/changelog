@@ -1,4 +1,4 @@
-zero-server-wizard (0.30.19,1) bionic; urgency=medium
+zero-server-wizard (0.30.19.1) bionic; urgency=medium
 
   * using ldap password instead of netadmin in samba/slave
 
