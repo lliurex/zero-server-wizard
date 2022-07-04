@@ -19,8 +19,8 @@ gettext.textdomain('zero-server-wizard')
 _=gettext.gettext
 
 
-DNS1="172.27.111.5"
-DNS2="172.27.111.6"
+DNS1="10.239.3.7"
+DNS2="10.239.3.8"
 
 class Independent:
 	
