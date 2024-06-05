@@ -2,6 +2,7 @@
 
 import xmlrpc.client
 import ssl
+import os
 
 def check_environment():
 
@@ -29,3 +30,9 @@ if check_environment()[0]:
     print(c.clean_nat_services( user, 'NetworkManager' ))
     print(c.clean_mirror_redirect_service( user, 'NetworkManager'))
     print(c.unset_replication_vars( user, 'NetworkManager'))
+    llx_network_config="/etc/netplan/20-lliurex.yaml"
+    replication_network_config="/etc/netplan/30-replication-lliurex.yaml"
+    if os.path.exists(llx_network_config):
+        os.remove(llx_network_config)
+    if os.path.exists(replication_network_config):
+        os.remove(replication_network_config)
